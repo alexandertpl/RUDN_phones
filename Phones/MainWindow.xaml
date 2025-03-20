@@ -5,24 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Phones" d:DataContext="{d:DesignInstance Type=local:PhonesViewModel}"
         mc:Ignorable="d"
-        Title="Phones" Height="350" Width="525">
+        Title="Phones" Height="350" Width="800">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="0.8*" />
         </Grid.ColumnDefinitions>
 
-        <Grid>
-            <ListBox Grid.Column="0" SelectedItem="{Binding SelectedPhone}" />
-        </Grid>
+        <ListBox Grid.Column="0" ItemsSource="{Binding PhonesList}" SelectedItem="{Binding SelectedPhone}">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Margin="5">
+                        <TextBlock FontSize="18" Text="{Binding Path=Title}" />
+                        <TextBlock Text="{Binding Path=Company}" />
+                        <TextBlock Text="{Binding Path=Price}" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
         <StackPanel Grid.Column="1" DataContext="{Binding SelectedPhone}" >
-            <TextBlock Text="Выбранный элемент" />
-            <TextBlock Text="Модель" />
+            <TextBlock FontSize="16" FontWeight="Bold" Text="Выбранный элемент" />
+            <TextBlock FontWeight="Bold" Text="Модель" />
             <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="Производитель" />
+            <TextBlock FontWeight="Bold" Text="Производитель" />
             <TextBlock Text="{Binding Company, UpdateSourceTrigger=PropertyChanged}" />
-            <TextBlock Text="Цена" />
+            <TextBlock FontWeight="Bold" Text="Цена" />
             <TextBox Name="PhonePrice" Text="{Binding Price}" />
             <Button Content="Изменить" Click="Price_Edit"/>
         </StackPanel>
