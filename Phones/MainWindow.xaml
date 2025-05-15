@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Phones" d:DataContext="{d:DesignInstance Type=local:PhonesViewModel}"
         mc:Ignorable="d"
-        Title="Phones" Height="350" Width="800">
+        Title="Phones" Height="350" Width="800"
+        Closed="Window_Closed">
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
@@ -24,15 +26,22 @@
             </ListBox.ItemTemplate>
         </ListBox>
 
-        <StackPanel Grid.Column="1" DataContext="{Binding SelectedPhone}" >
+        <StackPanel Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="10">
+            <Button Content="Сортировать по модели (А-Я)" Click="SortNameAscending_Click" Margin="5"/>
+            <Button Content="Сортировать по модели (Я-А)" Click="SortNameDescending_Click" Margin="5"/>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1" DataContext="{Binding ChangedPhone}" >
             <TextBlock FontSize="16" FontWeight="Bold" Text="Выбранный элемент" />
             <TextBlock FontWeight="Bold" Text="Модель" />
-            <TextBlock Text="{Binding Title, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Name="PhoneTitle" Text="{Binding Title}" />
             <TextBlock FontWeight="Bold" Text="Производитель" />
-            <TextBlock Text="{Binding Company, UpdateSourceTrigger=PropertyChanged}" />
+            <TextBox Name="PhoneCompany" Text="{Binding Company}" />
             <TextBlock FontWeight="Bold" Text="Цена" />
             <TextBox Name="PhonePrice" Text="{Binding Price}" />
-            <Button Content="Изменить" Click="Price_Edit"/>
+            <Button Content="Изменить" Click="ChangeModel"/>
+            <Button Content="Добавить телефон" Click="AddPhoneButton_Click"/>
+            <Button Content="Удалить выбранный" Click="DeletePhoneButton_Click"/>
         </StackPanel>
     </Grid>
 </Window>

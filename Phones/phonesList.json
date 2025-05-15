@@ -1,27 +1,32 @@
-﻿[
-    {
-        "Title": "iPhone 16 Pro Max",
-        "Company": "Apple",
-        "Price": 92000
-    },
-    {
-        "Title": "Galaxy S7 Edge",
-        "Company": "Samsung",
-        "Price": 60000
-    },
-    {
-        "Title": "Elite x3",
-        "Company": "HP",
-        "Price": 56000
-    },
-    {
-        "Title": "Mi5S",
-        "Company": "Xiaomi",
-        "Price": 35000
-    },
-    {
-        "Title": "Honor 10xapivfhjcbaehkfgjkf",
-        "Company": "Huawei",
-        "Price": 90000
-    }
+[
+  {
+    "Title": "Elite x3",
+    "Company": "HP",
+    "Price": 56000
+  },
+  {
+    "Title": "Galaxy S7 Edge",
+    "Company": "Samsung",
+    "Price": 60000
+  },
+  {
+    "Title": "Honor 10",
+    "Company": "Huawei",
+    "Price": 90000
+  },
+  {
+    "Title": "iPhone 16 Pro Max",
+    "Company": "Apple",
+    "Price": 1027887
+  },
+  {
+    "Title": "Mi5S",
+    "Company": "Xiaomi",
+    "Price": 35000
+  },
+  {
+    "Title": "R9",
+    "Company": "OnePlus",
+    "Price": 60002
+  }
 ]

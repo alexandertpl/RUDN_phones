@@ -47,5 +47,10 @@ namespace Phones
                 PropertyChanged(this, new PropertyChangedEventArgs(prop));
             }
         }
+
+        public Phone Clone()
+        {
+            return (Phone)this.MemberwiseClone();
+        }
     }
 }
